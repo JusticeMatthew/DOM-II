@@ -47,9 +47,14 @@ window.addEventListener('resize', (event => {
     if (window.innerWidth === 500) {
         window.alert('Breakpoint!')
         event.stopPropagation()
+        // Hopefully this counts for my nested stop prop? I needed it so it wouldn't pop up duplicate alerts so I think that means yes :)
     }
 }));
 
 // 10 AuxClick (I picked this one specifically since I though it was interesting click soon will only reference the main mouse button)
 
 document.addEventListener('auxclick', (event => console.log('Extra buttons are nice')))
+
+// Nav Stop
+
+document.querySelectorAll('.nav-link').forEach(item => item.addEventListener('click', (event => event.target.preventDefault)));
